@@ -1,0 +1,29 @@
+<html>
+<meta charset = "UTF-8">
+
+<script>
+
+
+var distancia = 13;
+var velocidadeMediaTaxi = 45;
+var velocidadeMediaCarro = 50;
+var estacionamento = 15;
+var valorGas =4.00;
+var rendimentoCarro = 10;
+var tarifaTaxi =3.10;
+var tempoCarro = distancia/velocidadeMediaCarro*60;
+var precoTaxi = tarifaTaxi * distancia;
+var tempoTaxi = distancia/velocidadeMediaTaxi*60;
+var precoCarro = (valorGas/rendimentoCarro*distancia)+estacionamento;
+
+document.write("<h3> Carro: </h3><br>");
+document.write("Tempo: "+Math.round(tempoCarro)+"min<br>");
+document.write("Preço: R$"+(precoCarro.toFixed(2)).replace(".",","));
+
+
+document.write("<h3> Taxi: </h3><br>");
+document.write("Tempo: "+Math.round(tempoTaxi)+"min<br>");
+document.write("Preço: R$"+(precoTaxi.toFixed(2)).replace(".",","));
+
+</script>
+</html>
