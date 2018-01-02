@@ -1,0 +1,19 @@
+<html>
+<meta charset = "UTF-8">
+
+<script>
+
+var ana = 25;
+var vini= 16;
+var dri = 33;
+var soma = vini+dri+ana;
+var media = soma/3;
+
+document.write("Soma das Idades:<br>");
+document.write(soma+"<br>");
+document.write("Média das Idades:<br>");
+document.write(Math.round(media));
+
+</script>
+
+</html>	
