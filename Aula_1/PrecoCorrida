@@ -4,13 +4,13 @@
 <script>
 
 
-var distancia = prompt("Digite a Distância Percorrida: ");
-var velocidadeMediaTaxi = prompt("Digite a Velocidade Média do Taxi: ");
-var velocidadeMediaCarro = prompt("Digite a Velocidade Média do Carro: ");
-var estacionamento = parseFloat(prompt("Digite o Valor do Estacionamento: "));
-var valorGas =prompt("Digite o Valor da gasolina: ");
-var rendimentoCarro = prompt("Digite o rendimento do carro: ");
-var tarifaTaxi =prompt("Digite o valor da tarifa do Táxi: ");
+var distancia = parseFloat(prompt("Digite a Distância Percorrida: ").replace(",","."));
+var velocidadeMediaTaxi = parseFloat(prompt("Digite a Velocidade Média do Taxi: ").replace(",","."));
+var velocidadeMediaCarro = parseFloat(prompt("Digite a Velocidade Média do Carro: ").replace(",","."));
+var estacionamento = parseFloat(prompt("Digite o Valor do Estacionamento: ").replace(",","."));
+var valorGas =parseFloat(prompt("Digite o Valor da gasolina: ").replace(",","."));
+var rendimentoCarro = parseFloat(prompt("Digite o rendimento do carro: ").replace(",","."));
+var tarifaTaxi =parseFloat(prompt("Digite o valor da tarifa do Táxi: ").replace(",","."));
 var tempoCarro = distancia/velocidadeMediaCarro*60;
 var precoTaxi = tarifaTaxi * distancia;
 var tempoTaxi = distancia/velocidadeMediaTaxi*60;
