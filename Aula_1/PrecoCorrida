@@ -4,9 +4,22 @@
 <script>
 
 var texto;
+var valor;
+var tempo;
+
 function pegaNumero(texto){
 
-	return parseFloat(prompt(texto).replace(",","."));
+	return parseFloat(prompt(texto).replace(",",".").replace("dez","10"));
+}
+
+function arrumarValor(valor){
+
+	return ("R$"+(valor.toFixed(2)).replace(".",","));
+}
+
+function arrumarTempo(tempo){
+
+	return ("Tempo: "+Math.round(tempo)+"min<br>");
 }
 
 var distancia = pegaNumero("Digite a distância: ");
@@ -23,13 +36,13 @@ var precoCarro = (valorGas/rendimentoCarro*distancia)+estacionamento;
 
 
 document.write("<h3> Carro: </h3><br>");
-document.write("Tempo: "+Math.round(tempoCarro)+"min<br>");
-document.write("Preço: R$"+(precoCarro.toFixed(2)).replace(".",","));
+document.write(arrumarTempo(tempoCarro));
+document.write(arrumarValor(precoCarro));
 
 
 document.write("<h3> Taxi: </h3><br>");
-document.write("Tempo: "+Math.round(tempoTaxi)+"min<br>");
-document.write("Preço: R$"+(precoTaxi.toFixed(2)).replace(".",","));
+document.write(arrumarTempo(tempoTaxi));
+document.write(arrumarValor(precoTaxi));
 
 </script>
 </html>
