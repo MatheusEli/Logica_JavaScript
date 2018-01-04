@@ -1,0 +1,52 @@
+<html>
+
+<meta charset = "UTF-8">
+<script src = "funcoes.js"></script>
+<script>
+
+var diaAtual = 4;
+var mesAtual = 1;
+var anoAtual = 2018;
+
+
+var nome = prompt("Digite seu Nome completo:");
+var peso = pegaNumero("Digite seu Peso: ");
+var altura = pegaNumero("Digite sua Altura: ");
+var imc = peso/(altura*altura);
+
+
+
+var diaNascimento = parseInt(prompt("Digite o dia de seu Nascimento: "));
+var mesNascimento = parseInt(prompt("Digite o mês de seu Nascimento: "));
+var anoNascimento = parseInt(prompt("Digite o ano de seu Nascimento: "));
+
+
+var idade = (anoAtual - anoNascimento);
+
+if(mesAtual < mesNascimento){
+	idade = (idade-1);
+}
+
+
+if(mesAtual == mesNascimento){
+	
+	if(diaAtual < diaNascimento){
+		idade = (idade-1);}
+}
+
+
+document.write("<h2>CADASTRO ACADEMIA</h2>");
+document.write("Nome: "+nome+"<br>Data de Nascimento: "+diaNascimento+"/"+mesNascimento+"/"+anoNascimento+"<br>Peso: "+peso.toFixed(2)+"<br>Altura: "+altura.toFixed(2)+"<br>Idade: "+idade+"<br>");
+document.write("<h4>IMC: "+formataDecimal(imc)+"</h4>");
+
+
+if(imc<18.5){
+	document.write("Você esta Desnutrido");}
+if(imc>= 35){
+	document.write("Você esta com Sobrepeso");}
+if(imc >= 18.5  &&  imc < 35){
+	document.write("Você está saudável!");}
+
+
+</script>
+</html>
