@@ -1,0 +1,20 @@
+<html>
+<meta charset = "UTF-8">
+
+<script src = "funcoes.js"></script>
+<script>
+
+var peso = pegaNumero("Digite o peso:");
+var altura = pegaNumero("Digie a altura: ");
+var imc = peso/(altura*altura);
+
+document.write("IMC = "+formataDecimal(imc)+"<br>");
+
+if(imc<18.5){
+	document.write("Você esta Desnutrida");}
+if(imc>= 35){
+	document.write("Você esta com Sobrepeso");}
+if(imc >= 18.5  &&  imc < 35){
+	document.write("Você está saudável!");}
+</script>
+</html>
