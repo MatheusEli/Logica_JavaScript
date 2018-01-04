@@ -2,21 +2,19 @@
 
 <meta charset = "UTF-8">
 
+<script src = "funcoesTimes.js"></script>
+
 <script>
 
-var time1;
-var time2;
+var time1 = pegueInteiro("Digite a quantidade de vitórias do time 1:");
+var time2 = pegueInteiro("Digite a quantidade de vitórias do time 2:");
+
+var empateTime1 = pegueInteiro("Digite a quantidade de empates do time 1:");
+var empateTime2 = pegueInteiro("Digite a quantidade de empates do time 2:");
 
 
-time1 = parseFloat(prompt("Digite a quantidade de vitórias do time 1:"));
-time2 = parseFloat(prompt("Digite a quantidade de vitórias do time 2:"));
-
-var empateTime1 = parseFloat(prompt("Digite a quantidade de empates do time 1:"));
-var empateTime2 = parseFloat(prompt("Digite a quantidade de empates do time 2:"));
-
-
-var pontosTime1 = ((time1*3)+empateTime1);
-var pontosTime2 = ((time2*3)+empateTime2);
+var pontosTime1 = calcularPontos(time1,empateTime1);
+var pontosTime2 = calcularPontos(time2,empateTime2);
 
 if(pontosTime2 == pontosTime1){
 	document.write("<h3>EMPATADOS</h3>");
