@@ -1,0 +1,37 @@
+<html>
+
+<meta charset = "UTF-8">
+
+<script>
+
+var time1;
+var time2;
+
+
+time1 = parseFloat(prompt("Digite a quantidade de vitórias do time 1:"));
+time2 = parseFloat(prompt("Digite a quantidade de vitórias do time 2:"));
+
+var empateTime1 = parseFloat(prompt("Digite a quantidade de empates do time 1:"));
+var empateTime2 = parseFloat(prompt("Digite a quantidade de empates do time 2:"));
+
+
+var pontosTime1 = ((time1*3)+empateTime1);
+var pontosTime2 = ((time2*3)+empateTime2);
+
+if(pontosTime2 == pontosTime1){
+	document.write("<h3>EMPATADOS</h3>");
+}
+
+if(pontosTime1 > pontosTime2){
+	document.write("<h3>TIME 1 ESTA GANHANDO</h3>");
+}
+
+if(pontosTime2 > pontosTime1){
+	document.write("<h3>TIME 2 ESTA GANHANDO</h3>");
+}
+
+document.write("<h4>TIME 1</h4><h5>"+pontosTime1+" pontos</h5>Vitórias: "+time1+"<br>Empates: "+empateTime1);
+document.write("<h4>TIME 2</h4><h5>"+pontosTime2+" pontos</h5>Vitórias: "+time2+"<br>Empates: "+empateTime2);
+
+</script>
+</html>
