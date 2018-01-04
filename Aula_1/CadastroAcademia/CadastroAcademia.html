@@ -8,18 +8,21 @@ var diaAtual = 4;
 var mesAtual = 1;
 var anoAtual = 2018;
 
+var diaNascimento;
+var mesNascimento; 
+var anoNascimento; 
 
 var nome = prompt("Digite seu Nome completo:");
 var peso = pegaNumero("Digite seu Peso: ");
 var altura = pegaNumero("Digite sua Altura: ");
 var imc = peso/(altura*altura);
+var dataNascimento = prompt("Digite a data de nascimento DD/MM/AAAA: ");
 
+var valores = dataNascimento.split("/");
 
-
-var diaNascimento = parseInt(prompt("Digite o dia de seu Nascimento: "));
-var mesNascimento = parseInt(prompt("Digite o mês de seu Nascimento: "));
-var anoNascimento = parseInt(prompt("Digite o ano de seu Nascimento: "));
-
+diaNascimento = parseInt(valores[0]);
+mesNascimento = parseInt(valores[1]);
+anoNascimento = parseInt(valores[2]);
 
 var idade = (anoAtual - anoNascimento);
 
@@ -36,7 +39,7 @@ if(mesAtual == mesNascimento){
 
 
 document.write("<h2>CADASTRO ACADEMIA</h2>");
-document.write("Nome: "+nome+"<br>Data de Nascimento: "+diaNascimento+"/"+mesNascimento+"/"+anoNascimento+"<br>Peso: "+peso.toFixed(2)+"<br>Altura: "+altura.toFixed(2)+"<br>Idade: "+idade+"<br>");
+document.write("Nome: "+nome+"<br>Data de Nascimento: "+dataNascimento+"<br>Peso: "+peso.toFixed(2)+"<br>Altura: "+altura.toFixed(2)+"<br>Idade: "+idade+"<br>");
 document.write("<h4>IMC: "+formataDecimal(imc)+"</h4>");
 
 
