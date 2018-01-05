@@ -1,0 +1,26 @@
+<html>
+<meta charset = "UTF-8">
+
+
+<button onclick = "rodaProdutos()">Adicionar Produto</button>
+
+<script src = "http://192.168.113.28:8080/impressao.js"></script>
+<script>
+
+function rodaProdutos(){
+
+var nomeProduto = prompt("Digite o nome do Produto: ");
+var precoProduto = parseFloat(prompt("Digite o valor do "+nomeProduto+": ").replace(",","."));
+
+while(isNaN(precoProduto)){
+	alert("Preço Inválido!");
+	precoProduto = parseFloat(prompt("Digite Novamente o valor do "+nomeProduto+": ").replace(",","."));
+}
+
+imprimeTexto(nomeProduto+" - R$"+precoProduto.toFixed(2).replace(".",","));
+
+}
+</script>
+
+
+</html>
