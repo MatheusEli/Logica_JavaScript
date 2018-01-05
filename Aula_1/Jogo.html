@@ -2,6 +2,7 @@
 
 <meta charset = "UTF-8">
 <!-- button onclick = cria um botão e colocamos a função rodaJogo para funcionar logo após o click! -->
+
 <button onclick = "rodaJogo()">START!</button>
 
 <script src = "funcoes.js"></script>
@@ -21,16 +22,18 @@ var numeroDigitado = parseInt(prompt("Digite um número de 0 a 10, você tem 5 T
 
 //While = Enquanto a condição for verdade, executa comandos; se falsa, passa reto!
 //isNaN(valor) = se retornar true esse valor não é um numero; se ele retornar false esse valor é um numero!
-while((numeroDigitado > 10    ||     numeroDigitado < 0     ||    isNaN(numeroDigitado))  &&  validacoes < 5){
-	
-	validacoes += 1;
+while((numeroDigitado > 10    ||     numeroDigitado < 0     ||    isNaN(numeroDigitado))){
+	if(validacoes >= 5){
+		break;
+}
+	validacoes ++;
 	tentativas = tentativas - 1;	
 	alert("Numero Invalido");
 	numeroDigitado = parseInt(prompt("Digite um numero de 0 a 10, você tem "+tentativas+" Tentativas: "));
 	
 }
 
-if(validacoes => 5){
+if(validacoes > 5){
 	document.write("LIMITE DE TENTATIVAS ULTRAPASSADAS");
 }
 if(numeroDigitado == numeroSorteado){
