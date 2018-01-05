@@ -1,26 +1,34 @@
 <html>
 <meta charset = "UTF-8">
 
-
+<h3>LOJA - Caixa Rápido - Limite de 10 Produtos!</h3>
+Nome:<input id = "nomeTag"><br>
+Preço:<input id = "precoTag"><br>
 <button onclick = "rodaProdutos()">Adicionar Produto</button>
 
 <script src = "http://192.168.113.28:8080/impressao.js"></script>
 <script>
 
+var limite = 0;
+
 function rodaProdutos(){
 
-var nomeProduto = prompt("Digite o nome do Produto: ");
-var precoProduto = parseFloat(prompt("Digite o valor do "+nomeProduto+": ").replace(",","."));
+var nomeProduto;
+var precoProduto;
 
-while(isNaN(precoProduto)){
-	alert("Preço Inválido!");
-	precoProduto = parseFloat(prompt("Digite Novamente o valor do "+nomeProduto+": ").replace(",","."));
+
+nomeProduto = nomeTag.value;
+precoProduto = parseFloat(precoTag.value.replace(",","."));
+
+if(limite == 10){
+
+	alert("LIMITE ATINGIDO!");
 }
 
 imprimeTexto(nomeProduto+" - R$"+precoProduto.toFixed(2).replace(".",","));
+	
+limite = limite + 1;
 
 }
 </script>
-
-
 </html>
