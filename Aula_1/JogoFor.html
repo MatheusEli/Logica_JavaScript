@@ -24,17 +24,17 @@ for(var validacao = 0;validacao < 6;validacao ++){
 //Console.log = Recebe o  texto e mostra o texto na aba do console:
 console.log(sorteados);
 
-var numeroDigitado = parseInt(prompt("Digite um número de 0 a 60, você tem 5 Tentativas: "));
+var numeroDigitado ;
+
 
 //isNaN(valor) = se retornar true esse valor não é um numero; se ele retornar false esse valor é um numero!
-while((numeroDigitado > 60    ||     numeroDigitado < 0     ||    isNaN(numeroDigitado))){
+for(numeroDigitado= parseInt(prompt("Digite um número de 0 a 60, você tem 5 Tentativas: "));(numeroDigitado > 60    ||     numeroDigitado < 0     ||    isNaN(numeroDigitado));numeroDigitado = parseInt(prompt("Digite um numero de 0 a 10, você tem "+tentativas+" Tentativas: "))){
 	if(validacoes >= 5){
 		break;
 }
 	validacoes ++;
 	tentativas = tentativas - 1;	
 	alert("Numero Invalido");
-	numeroDigitado = parseInt(prompt("Digite um numero de 0 a 10, você tem "+tentativas+" Tentativas: "));
 	
 }
 
@@ -43,11 +43,11 @@ for(posicao = 0; posicao < 6; posicao++){
 	if(numeroDigitado == sorteados[posicao]){
 		document.write("Acertou!!!!");
 		break;
-	}
+}
 }
 
 if(posicao == 6){
-	document.write("Errou!!!");}
+	document.write("Errrrrrroooou!!!");}
 }
 
 </script>
