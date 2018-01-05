@@ -10,19 +10,29 @@
 
 function rodaJogo(){
 
-//Math.round = arredonda o numero;Math.random = sorteia numeros entre 0 e 1;
-var numeroSorteado = Math.round(Math.random()*10);
+var sorteados = [];
+var validacao = 0;
 var validacoes= 1;
 var tentativas = 5;
-//Console.log = Recebe o  texto e mostra o texto na aba do console:
-console.log("Número Sorteado: "+numeroSorteado);
+var posicao = 0;
 
-var numeroDigitado = parseInt(prompt("Digite um número de 0 a 10, você tem 5 Tentativas: "));
+while(validacao < 6){
+	
+	//Math.round = arredonda o numero;Math.random = sorteia numeros entre 0 e 1;
+	sorteados.push(Math.round(Math.random()*60));
+	validacao ++;
+
+}
+
+//Console.log = Recebe o  texto e mostra o texto na aba do console:
+console.log(sorteados);
+
+var numeroDigitado = parseInt(prompt("Digite um número de 0 a 60, você tem 5 Tentativas: "));
 
 
 //While = Enquanto a condição for verdade, executa comandos; se falsa, passa reto!
 //isNaN(valor) = se retornar true esse valor não é um numero; se ele retornar false esse valor é um numero!
-while((numeroDigitado > 10    ||     numeroDigitado < 0     ||    isNaN(numeroDigitado))){
+while((numeroDigitado > 60    ||     numeroDigitado < 0     ||    isNaN(numeroDigitado))){
 	if(validacoes >= 5){
 		break;
 }
@@ -33,14 +43,19 @@ while((numeroDigitado > 10    ||     numeroDigitado < 0     ||    isNaN(numeroDi
 	
 }
 
-if(validacoes > 5){
-	document.write("LIMITE DE TENTATIVAS ULTRAPASSADAS");
+while(posicao < 6){
+
+if(numeroDigitado == sorteados[posicao]){
+	document.write("Acertou!!!!");
+	break;
 }
-if(numeroDigitado == numeroSorteado){
-	document.write("<h1>Acertou!</h1>");
-}else{
-	document.write("<h1>EEEEERRRRRRRRRRRRRRRRRRRRRRRRRROOU!</h1>");
-}}
+	posicao ++;
+}
+
+if(posicao >= 6){
+	document.write("Errrrrrroooou!!!");
+}
+}
 
 </script>
 </html>
